@@ -250,10 +250,19 @@ This program exchanges the contents of two 16-bit memory locations (NUM1 and NUM
 ## Screenshot of the results 
 
 Part(b):
+
+
+
 <img width="381" height="425" alt="image" src="https://github.com/user-attachments/assets/6d94eba0-b37b-4616-88b0-f4848f702b90" />
 
+
+
 Part(c):
+
+
+
 <img width="342" height="432" alt="image" src="https://github.com/user-attachments/assets/e35be2e1-9e71-4197-805f-c8ad7f36d6b6" />
+
 
 
 ## Result
