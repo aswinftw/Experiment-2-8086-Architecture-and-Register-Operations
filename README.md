@@ -171,6 +171,28 @@ Write an 8086 assembly language program to exchange the contents of two
 
 ### Assembly Program
 
+``` asm
+.MODEL SMALL
+.STACK 100H
+
+.DATA
+    NUM1 DW 1234H       ; First 16-bit memory location
+    NUM2 DW 5678H       ; Second 16-bit memory location
+
+.CODE
+MAIN:
+    MOV AX, @DATA
+    MOV DS, AX
+
+    MOV AX, NUM1        ; 1. Load the first memory value into AX
+    MOV BX, NUM2        ; 2. Load the second memory value into BX
+
+    MOV NUM1, BX        ; 3. Store BX at the first memory location
+    MOV NUM2, AX        ; 4. Store AX at the second memory location
+
+    MOV AH, 4CH         ; 5. Stop the program
+    INT 21H
+```
  
 
 ### Expected Result
@@ -179,6 +201,11 @@ Write an 8086 assembly language program to exchange the contents of two
   ----------------- ------------------ -----------------
   VALUE1                       `1111H`           `2222H`
   VALUE2                       `2222H`           `1111H`
+
+### Result
+
+<img width="402" height="437" alt="image" src="https://github.com/user-attachments/assets/9ea543fb-d331-4a32-8548-2a856fdd5906" />
+
 
 ### Explanation
 
