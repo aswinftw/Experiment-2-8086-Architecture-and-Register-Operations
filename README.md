@@ -209,6 +209,7 @@ MAIN:
 
 ### Explanation
 
+This program exchanges the contents of two 16-bit memory locations (NUM1 and NUM2) using general-purpose registers because the 8086 microprocessor does not allow direct memory-to-memory data transfer with the MOV instruction. After initializing the data segment register (DS) to locate the variables defined in the .DATA section, the program loads the 16-bit value of NUM1 into the AX register and the value of NUM2 into the BX register. It then writes the contents of BX back into NUM1 and the contents of AX back into NUM2, effectively swapping both values in memory without data loss before cleanly terminating execution via DOS interrupt 21H (AH = 4CH).
   
 ------------------------------------------------------------------------
 
