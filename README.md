@@ -1,4 +1,4 @@
-# Experiment--01-Experiment-1-8086-Architecture-and-Register-Operations
+# Experiment--02-Experiment-1-8086-Architecture-and-Register-Operations
  
 ## Aim
 
@@ -112,12 +112,27 @@ from one register to another and store the result in memory.
 
 ### Assembly Program
 
-<img width="1150" height="628" alt="image" src="https://github.com/user-attachments/assets/dfeafb44-1d54-40d5-8b8c-3dfdbb0631e8" />
+``` asm
+.MODEL SMALL
+.STACK 100H
 
-### Result
+.DATA
+    RESULT DW 0000H
 
-<img width="415" height="340" alt="image" src="https://github.com/user-attachments/assets/b426b02f-0b9d-4059-b26c-92f48b02e773" />
+.CODE
+MAIN PROC
+    MOV AX, @DATA
+    MOV DS, AX
 
+    MOV AX, 1234H       ; Load 16-bit value into AX
+    MOV BX, AX          ; Copy AX into BX
+    MOV RESULT, BX      ; Store BX in memory
+
+    MOV AH, 4CH
+    INT 21H
+MAIN ENDP
+END MAIN
+```
 
 ### Expected Result
 
@@ -141,7 +156,6 @@ operand.
 Write an 8086 assembly language program to exchange the contents of two
 16-bit memory locations using registers.
 
-
 ### Algorithm
 
 1.  Load the first memory value into AX.
@@ -152,12 +166,7 @@ Write an 8086 assembly language program to exchange the contents of two
 
 ### Assembly Program
 
-<img width="1160" height="710" alt="image" src="https://github.com/user-attachments/assets/f3e19822-7598-4997-a136-a5360f2f7ace" /> 
-
-### Result
-
-<img width="426" height="436" alt="image" src="https://github.com/user-attachments/assets/73a8980f-f335-43b1-ae7b-da4ac0a85c8a" />
-
+ 
 
 ### Expected Result
 
