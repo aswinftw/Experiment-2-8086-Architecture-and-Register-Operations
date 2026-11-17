@@ -172,10 +172,6 @@ END MAIN
 -   BX = `1234H`
 -   RESULT = `1234H`
 
-### Result
-
-<img width="435" height="543" alt="image" src="https://github.com/user-attachments/assets/8c128f9b-e360-420c-afed-ac0ab6291ba2" />
-
 
 ### Explanation
 
@@ -234,10 +230,6 @@ MAIN:
   VALUE1                       `1111H`           `2222H`
   VALUE2                       `2222H`           `1111H`
 
-### Result
-
-<img width="402" height="437" alt="image" src="https://github.com/user-attachments/assets/9ea543fb-d331-4a32-8548-2a856fdd5906" />
-
 
 ### Explanation
 
@@ -257,6 +249,11 @@ This program exchanges the contents of two 16-bit memory locations (NUM1 and NUM
     results.
 ## Screenshot of the results 
 
+Part(b):
+<img width="381" height="425" alt="image" src="https://github.com/user-attachments/assets/6d94eba0-b37b-4616-88b0-f4848f702b90" />
+
+Part(c):
+<img width="342" height="432" alt="image" src="https://github.com/user-attachments/assets/e35be2e1-9e71-4197-805f-c8ad7f36d6b6" />
 
 
 ## Result
@@ -267,15 +264,27 @@ storage and the exchange of two 16-bit memory values.
 
 
 ## Viva Voce Questions
+1. What is the function of the BIU in the 8086?
 
-1.  What is the function of the BIU in the 8086?
-2.  What is the role of the EU?
-3.  Why does the 8086 use a 6-byte instruction queue?
-4.  What is the maximum physical memory address space of the 8086?
-5.  What is the difference between a register and a memory variable?
-6.  Does the `MOV` instruction change the source operand?
-7.  Why are registers used when exchanging two memory values?
-8.  What is the purpose of the DS segment register?
+The Bus Interface Unit (BIU) handles communication between the microprocessor and memory or I/O devices. It fetches instructions, reads and writes data, generates 20-bit physical addresses and contains the 6-byte instruction queue.
 
- 
-` 
+3. What is the role of the EU?
+
+The Execution Unit (EU) executes instructions fetched by the BIU. It contains the ALU, general-purpose registers, pointer and index registers, flag register, instruction decoder and control circuitry.
+
+5. Why does the 8086 use a 6-byte instruction queue?
+The 8086 uses a 6-byte instruction queue to store prefetched instructions. This allows the BIU to fetch instructions while the EU executes previous instructions, improving processing speed through pipelining.
+
+6. What is the maximum physical memory address space of the 8086?
+The 8086 has a 20-bit address bus, so it can address:
+Therefore, its maximum physical memory address space is 1 MB.
+
+7. What is the difference between a register and a memory variable?
+Register	Memory variable
+Located inside the CPU	Located in memory (RAM)
+Very fast to access	Slower to access
+Limited in number	Can store larger amounts of data
+Example: AX, BX	Example: RESULT DW 0000H
+
+8. Does the MOV instruction change the source operand?
+No. The MOV instruction copies data from the source operand to the destination operand. The source remains unchanged.
