@@ -140,6 +140,11 @@ END MAIN
 -   BX = `1234H`
 -   RESULT = `1234H`
 
+### Result
+
+<img width="435" height="543" alt="image" src="https://github.com/user-attachments/assets/8c128f9b-e360-420c-afed-ac0ab6291ba2" />
+
+
 ### Explanation
 
 `MOV BX, AX` copies the 16-bit contents of AX into BX without changing
